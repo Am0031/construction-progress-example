@@ -7,7 +7,12 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "clean-docs": "rm -rf docs",
+    "build-docs": "npm run build && mv dist docs",
+    "deploy-master": "npm run clean-docs && npm run build-docs && git add . && git commit -m \"Deploy\" && git push"
   },
   "dependencies": {
     "@deck.gl/core": "^9.3.7",
