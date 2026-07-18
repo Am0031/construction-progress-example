@@ -1,0 +1,100 @@
+[
+  {
+    "zoneId": "ZN-01",
+    "name": "Milton Keynes City Council area",
+    "leadAuthority": "Milton Keynes City Council",
+    "polygon": [
+      [-0.800, 52.022],
+      [-0.760, 52.015],
+      [-0.735, 52.035],
+      [-0.740, 52.070],
+      [-0.730, 52.100],
+      [-0.770, 52.108],
+      [-0.800, 52.095],
+      [-0.812, 52.055],
+      [-0.800, 52.022]
+    ],
+    "status": "completed",
+    "consentReference": "MK/2025/0143/WAY",
+    "submittedDate": "2025-05-12",
+    "decisionDate": "2025-07-30",
+    "comments": "Full wayleave consent granted and all conditions discharged ahead of Section RA-001 mobilisation."
+  },
+  {
+    "zoneId": "ZN-02",
+    "name": "West Northamptonshire Council area",
+    "leadAuthority": "West Northamptonshire Council",
+    "polygon": [
+      [-0.945, 52.150],
+      [-0.905, 52.178],
+      [-0.925, 52.210],
+      [-0.895, 52.243],
+      [-0.915, 52.270],
+      [-0.940, 52.285],
+      [-0.870, 52.300],
+      [-0.800, 52.292],
+      [-0.760, 52.268],
+      [-0.775, 52.225],
+      [-0.752, 52.185],
+      [-0.792, 52.145],
+      [-0.860, 52.115],
+      [-0.945, 52.100],
+      [-0.945, 52.150]
+    ],
+    "status": "main works ongoing",
+    "consentReference": "WNC/2025/0871/WAY",
+    "submittedDate": "2025-06-01",
+    "decisionDate": "2025-09-18",
+    "comments": "Consent granted; discharging landscaping and ecology conditions in parallel with construction of the later M1-A sections and Northampton Substation."
+  },
+  {
+    "zoneId": "ZN-03",
+    "name": "Rugby Borough Council area",
+    "leadAuthority": "Rugby Borough Council",
+    "polygon": [
+      [-0.945, 52.150],
+      [-1.010, 52.145],
+      [-1.050, 52.175],
+      [-1.035, 52.210],
+      [-1.055, 52.240],
+      [-1.015, 52.270],
+      [-0.975, 52.290],
+      [-0.940, 52.285],
+      [-0.915, 52.270],
+      [-0.895, 52.243],
+      [-0.925, 52.210],
+      [-0.905, 52.178],
+      [-0.945, 52.150]
+    ],
+    "status": "preparing",
+    "consentReference": "RBC/2026/0034/WAY",
+    "submittedDate": "2026-01-20",
+    "decisionDate": null,
+    "comments": "Application under review by the planning committee. Ecology survey requested as a pre-condition, currently outstanding."
+  },
+  {
+    "zoneId": "ZN-04",
+    "name": "Warwick District area",
+    "leadAuthority": "Warwick District Council",
+    "polygon": [
+      [-1.560, 52.310],
+      [-1.480, 52.300],
+      [-1.380, 52.315],
+      [-1.250, 52.305],
+      [-1.130, 52.330],
+      [-1.050, 52.360],
+      [-1.075, 52.410],
+      [-1.140, 52.460],
+      [-1.280, 52.450],
+      [-1.420, 52.458],
+      [-1.540, 52.440],
+      [-1.560, 52.380],
+      [-1.560, 52.310]
+    ],
+    "status": "not started",
+    "consentReference": "WDC/pending",
+    "submittedDate": "",
+    "decisionDate": null,
+    "comments": "Wayleave application not yet submitted; scheduled once the Rugby-Coventry Spur design reaches this section."
+  }
+]

@@ -1,0 +1,91 @@
+[
+  {
+    "sectionId": "RA-002",
+    "p6ActivityId": "A1010",
+    "sectionSummary": "Grid Upgrade > Route M1-A > Section 2",
+    "activities": [
+      { "activityId": "A1010-10", "name": "Site establishment & access", "plannedStart": "2025-09-23", "plannedFinish": "2025-09-30", "actualStart": "2025-09-22", "actualFinish": "2025-09-29", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-20", "name": "Environmental & ecology clearance", "plannedStart": "2025-09-30", "plannedFinish": "2025-10-07", "actualStart": "2025-09-29", "actualFinish": "2025-10-06", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-30", "name": "Foundation excavation", "plannedStart": "2025-10-07", "plannedFinish": "2025-10-17", "actualStart": "2025-10-06", "actualFinish": "2025-10-16", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-40", "name": "Foundation concrete pour", "plannedStart": "2025-10-17", "plannedFinish": "2025-10-24", "actualStart": "2025-10-16", "actualFinish": "2025-10-23", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-50", "name": "Tower steelwork erection", "plannedStart": "2025-10-24", "plannedFinish": "2025-11-04", "actualStart": "2025-10-23", "actualFinish": "2025-11-03", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-60", "name": "Conductor stringing", "plannedStart": "2025-11-04", "plannedFinish": "2025-11-14", "actualStart": "2025-11-03", "actualFinish": "2025-11-13", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-70", "name": "Protection & control installation", "plannedStart": "2025-11-14", "plannedFinish": "2025-11-21", "actualStart": "2025-11-13", "actualFinish": "2025-11-20", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-80", "name": "Testing & commissioning", "plannedStart": "2025-11-21", "plannedFinish": "2025-11-28", "actualStart": "2025-11-20", "actualFinish": "2025-11-27", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-90", "name": "Energisation", "plannedStart": "2025-11-28", "plannedFinish": "2025-12-01", "actualStart": "2025-11-27", "actualFinish": "2025-11-30", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1010-100", "name": "Snagging & handover", "plannedStart": "2025-12-01", "plannedFinish": "2025-12-02", "actualStart": "2025-11-30", "actualFinish": "2025-12-02", "status": "finished", "percentComplete": 100 }
+    ]
+  },
+  {
+    "sectionId": "RA-007",
+    "p6ActivityId": "A1060",
+    "sectionSummary": "Grid Upgrade > Route M1-A > Section 7",
+    "activities": [
+      { "activityId": "A1060-10", "name": "Site establishment & access", "plannedStart": "2026-01-11", "plannedFinish": "2026-01-18", "actualStart": "2026-01-10", "actualFinish": "2026-01-17", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1060-20", "name": "Environmental & ecology clearance", "plannedStart": "2026-01-18", "plannedFinish": "2026-01-25", "actualStart": "2026-01-17", "actualFinish": "2026-01-24", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1060-30", "name": "Foundation excavation", "plannedStart": "2026-01-25", "plannedFinish": "2026-02-04", "actualStart": "2026-01-24", "actualFinish": "2026-02-03", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1060-40", "name": "Foundation concrete pour", "plannedStart": "2026-02-04", "plannedFinish": "2026-02-11", "actualStart": "2026-02-03", "actualFinish": "2026-02-10", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1060-50", "name": "Tower steelwork erection", "plannedStart": "2026-02-11", "plannedFinish": "2026-02-22", "actualStart": "2026-02-10", "actualFinish": "2026-02-21", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1060-60", "name": "Conductor stringing", "plannedStart": "2026-02-22", "plannedFinish": "2026-03-04", "actualStart": "2026-02-21", "actualFinish": "2026-03-03", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1060-70", "name": "Protection & control installation", "plannedStart": "2026-03-04", "plannedFinish": "2026-03-11", "actualStart": "2026-03-03", "actualFinish": null, "status": "late", "percentComplete": 60 },
+      { "activityId": "A1060-80", "name": "Testing & commissioning", "plannedStart": "2026-03-11", "plannedFinish": "2026-03-18", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1060-90", "name": "Energisation", "plannedStart": "2026-03-18", "plannedFinish": "2026-03-21", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1060-100", "name": "Snagging & handover", "plannedStart": "2026-03-21", "plannedFinish": "2026-03-22", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 }
+    ]
+  },
+  {
+    "sectionId": "RA-012",
+    "p6ActivityId": "A1110",
+    "sectionSummary": "Grid Upgrade > Route M1-A > Section 12",
+    "activities": [
+      { "activityId": "A1110-10", "name": "Site establishment & access", "plannedStart": "2026-05-01", "plannedFinish": "2026-05-08", "actualStart": "2026-04-30", "actualFinish": "2026-05-07", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A1110-20", "name": "Environmental & ecology clearance", "plannedStart": "2026-05-08", "plannedFinish": "2026-05-21", "actualStart": "2026-05-07", "actualFinish": null, "status": "late", "percentComplete": 40 },
+      { "activityId": "A1110-30", "name": "Foundation excavation", "plannedStart": "2026-05-21", "plannedFinish": "2026-05-31", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1110-40", "name": "Foundation concrete pour", "plannedStart": "2026-05-31", "plannedFinish": "2026-06-07", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1110-50", "name": "Tower steelwork erection", "plannedStart": "2026-06-07", "plannedFinish": "2026-06-18", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 }
+    ]
+  },
+  {
+    "sectionId": "RA-013",
+    "p6ActivityId": "A1120",
+    "sectionSummary": "Grid Upgrade > Route M1-A > Section 13",
+    "activities": [
+      { "activityId": "A1120-10", "name": "Site establishment & access", "plannedStart": "2026-05-23", "plannedFinish": "2026-05-28", "actualStart": null, "actualFinish": null, "status": "late", "percentComplete": 0 },
+      { "activityId": "A1120-20", "name": "Environmental & ecology clearance", "plannedStart": "2026-05-28", "plannedFinish": "2026-06-10", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1120-30", "name": "Foundation excavation", "plannedStart": "2026-06-10", "plannedFinish": "2026-06-18", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1120-40", "name": "Foundation concrete pour", "plannedStart": "2026-06-18", "plannedFinish": "2026-06-22", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A1120-50", "name": "Tower steelwork erection", "plannedStart": "2026-06-22", "plannedFinish": "2026-06-27", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 }
+    ]
+  },
+  {
+    "sectionId": "RB-005",
+    "p6ActivityId": "A2040",
+    "sectionSummary": "Grid Upgrade > Route Rugby-Coventry Spur > Section 5",
+    "activities": [
+      { "activityId": "A2040-10", "name": "Site establishment & access", "plannedStart": "2026-01-27", "plannedFinish": "2026-02-03", "actualStart": "2026-01-29", "actualFinish": "2026-02-05", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-20", "name": "Environmental & ecology clearance", "plannedStart": "2026-02-03", "plannedFinish": "2026-02-10", "actualStart": "2026-02-05", "actualFinish": "2026-02-12", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-30", "name": "Foundation excavation", "plannedStart": "2026-02-10", "plannedFinish": "2026-02-20", "actualStart": "2026-02-12", "actualFinish": "2026-02-22", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-40", "name": "Foundation concrete pour", "plannedStart": "2026-02-20", "plannedFinish": "2026-02-27", "actualStart": "2026-02-22", "actualFinish": "2026-03-01", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-50", "name": "Tower steelwork erection", "plannedStart": "2026-02-27", "plannedFinish": "2026-03-10", "actualStart": "2026-03-01", "actualFinish": "2026-03-12", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-60", "name": "Conductor stringing", "plannedStart": "2026-03-10", "plannedFinish": "2026-03-17", "actualStart": "2026-03-12", "actualFinish": "2026-03-19", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-70", "name": "Protection & control installation", "plannedStart": "2026-03-17", "plannedFinish": "2026-03-24", "actualStart": "2026-03-19", "actualFinish": "2026-03-26", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2040-80", "name": "Testing & commissioning", "plannedStart": "2026-03-24", "plannedFinish": "2026-03-31", "actualStart": "2026-03-26", "actualFinish": null, "status": "ongoing", "percentComplete": 70 },
+      { "activityId": "A2040-90", "name": "Energisation", "plannedStart": "2026-03-31", "plannedFinish": "2026-04-03", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A2040-100", "name": "Snagging & handover", "plannedStart": "2026-04-03", "plannedFinish": "2026-04-07", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 }
+    ]
+  },
+  {
+    "sectionId": "RB-007",
+    "p6ActivityId": "A2060",
+    "sectionSummary": "Grid Upgrade > Route Rugby-Coventry Spur > Section 7",
+    "activities": [
+      { "activityId": "A2060-10", "name": "Site establishment & access", "plannedStart": "2026-03-12", "plannedFinish": "2026-03-19", "actualStart": "2026-03-11", "actualFinish": "2026-03-18", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2060-20", "name": "Environmental & ecology clearance", "plannedStart": "2026-03-19", "plannedFinish": "2026-03-26", "actualStart": "2026-03-18", "actualFinish": "2026-03-25", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2060-30", "name": "Foundation excavation", "plannedStart": "2026-03-26", "plannedFinish": "2026-04-05", "actualStart": "2026-03-25", "actualFinish": "2026-04-04", "status": "finished", "percentComplete": 100 },
+      { "activityId": "A2060-40", "name": "Foundation concrete pour", "plannedStart": "2026-04-05", "plannedFinish": "2026-04-15", "actualStart": "2026-04-04", "actualFinish": null, "status": "late", "percentComplete": 45 },
+      { "activityId": "A2060-50", "name": "Tower steelwork erection", "plannedStart": "2026-04-15", "plannedFinish": "2026-04-26", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A2060-60", "name": "Conductor stringing", "plannedStart": "2026-04-26", "plannedFinish": "2026-05-03", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 },
+      { "activityId": "A2060-70", "name": "Protection & control installation", "plannedStart": "2026-05-03", "plannedFinish": "2026-05-21", "actualStart": null, "actualFinish": null, "status": "not started", "percentComplete": 0 }
+    ]
+  }
+]

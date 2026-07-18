@@ -1,0 +1,47 @@
+{
+  "projectName": "National Grid Upgrade — M1 Corridor & Rugby-Coventry Spur",
+  "contractReference": "NG-2025-0472",
+  "employer": "National Grid Electricity Transmission plc",
+  "contractor": "Example Grid Contractors Ltd",
+  "contractForm": "NEC4 Option C (Target Cost with Activity Schedule)",
+  "contractValueGBP": 184000000,
+  "overallCompletionDate": "2026-09-30",
+  "sectionalCompletion": [
+    { "section": "M1-A corridor (RA-001 to RA-026)", "completionDate": "2026-08-15" },
+    { "section": "Rugby-Coventry Spur (RB-001 to RB-016)", "completionDate": "2026-09-30" }
+  ],
+  "liquidatedDamages": {
+    "amountPerDayGBP": 15000,
+    "appliesFrom": "the relevant Sectional Completion Date or overall Completion Date, whichever is later to be achieved for the affected section",
+    "capPercentOfContractValue": 10,
+    "notes": "Delay damages accrue per calendar day of delay beyond the applicable completion date, capped at 10% of the contract value in aggregate."
+  },
+  "defectsLiabilityPeriodMonths": 12,
+  "maintenancePeriod": {
+    "durationMonths": 24,
+    "startsAt": "practical completion / handover of each section",
+    "scope": "Contractor remains responsible for scheduled maintenance, vegetation management along the corridor, and rectification of any defects notified by the Employer during this period at no additional cost."
+  },
+  "retentionPercentage": 5,
+  "retentionReleaseTerms": "Half released at Sectional Completion, remaining half released at the end of the Defects Liability Period.",
+  "bonusForEarlyCompletion": {
+    "amountPerDayGBP": 7500,
+    "notes": "Payable for each calendar day the overall Completion Date is bettered, capped at 60 days."
+  },
+  "keyMilestones": [
+    { "name": "Design freeze", "date": "2025-08-15" },
+    { "name": "First section mobilisation", "date": "2025-09-01" },
+    { "name": "M1-A corridor sectional completion", "date": "2026-08-15" },
+    { "name": "Rugby-Coventry Spur sectional completion", "date": "2026-09-30" },
+    { "name": "Overall completion / handover", "date": "2026-09-30" },
+    { "name": "End of Defects Liability Period", "date": "2027-09-30" },
+    { "name": "End of Maintenance Period", "date": "2028-09-30" }
+  ],
+  "penaltyClauses": [
+    "Liquidated damages of GBP 15,000 per calendar day apply if a Sectional or the overall Completion Date is missed, capped at 10% of contract value.",
+    "Failure to maintain the agreed outage windows with the DNO for commissioning work may incur a separate rescheduling charge of GBP 25,000 per missed window.",
+    "Persistent non-conformance with environmental/ecology conditions attached to the wayleave consents may trigger a compliance notice and, if unresolved within 14 days, a GBP 5,000 per week penalty until resolved."
+  ],
+  "insuranceRequirements": "Contractor to maintain Contractor's All Risks cover of GBP 200,000,000 and Public Liability cover of GBP 50,000,000 for the duration of the works and the Maintenance Period.",
+  "notes": "All figures in this file are illustrative example data for a demo application and do not represent a real contract."
+}

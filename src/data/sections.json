@@ -1,0 +1,830 @@
+[
+  {
+    "sectionId": "RA-001",
+    "p6ActivityId": "A1000",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 1",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 0,
+    "chainageEndKm": 5,
+    "startCoord": [
+      -0.7594,
+      52.0783
+    ],
+    "endCoord": [
+      -0.7797,
+      52.11586
+    ],
+    "status": "completed",
+    "plannedStart": "2025-09-01",
+    "plannedFinish": "2025-11-10",
+    "actualStart": "2025-08-30",
+    "actualFinish": "2025-11-09",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Section energised and handed over to operations.",
+    "predecessors": [],
+    "successors": [
+      "A1010"
+    ],
+    "freeFloat": 7
+  },
+  {
+    "sectionId": "RA-002",
+    "p6ActivityId": "A1010",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 2",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 5,
+    "chainageEndKm": 10,
+    "startCoord": [
+      -0.7797,
+      52.11586
+    ],
+    "endCoord": [
+      -0.81843,
+      52.15003
+    ],
+    "status": "completed",
+    "plannedStart": "2025-09-23",
+    "plannedFinish": "2025-12-02",
+    "actualStart": "2025-09-22",
+    "actualFinish": "2025-12-02",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Snagging closed out, as-built survey submitted.",
+    "predecessors": [
+      "A1000"
+    ],
+    "successors": [
+      "A1020"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RA-003",
+    "p6ActivityId": "A1020",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 3",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 10,
+    "chainageEndKm": 15,
+    "startCoord": [
+      -0.81843,
+      52.15003
+    ],
+    "endCoord": [
+      -0.86566,
+      52.18384
+    ],
+    "status": "commissioning",
+    "plannedStart": "2025-10-15",
+    "plannedFinish": "2025-12-24",
+    "actualStart": "2025-10-15",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [],
+    "comments": "HV testing team was pulled onto Section RA-005 to hit a DNO outage window; energisation testing here resumed but now trails its neighbours.",
+    "predecessors": [
+      "A1010"
+    ],
+    "successors": [
+      "A1030"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RA-004",
+    "p6ActivityId": "A1030",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 4",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 15,
+    "chainageEndKm": 20,
+    "startCoord": [
+      -0.86566,
+      52.18384
+    ],
+    "endCoord": [
+      -0.89083,
+      52.22592
+    ],
+    "status": "completed",
+    "plannedStart": "2025-11-06",
+    "plannedFinish": "2026-01-15",
+    "actualStart": "2025-11-07",
+    "actualFinish": "2026-01-17",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Snagging closed out, as-built survey submitted.",
+    "predecessors": [
+      "A1020"
+    ],
+    "successors": [
+      "A1040",
+      "A2000"
+    ],
+    "freeFloat": 3
+  },
+  {
+    "sectionId": "RA-005",
+    "p6ActivityId": "A1040",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 5",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 20,
+    "chainageEndKm": 25,
+    "startCoord": [
+      -0.89083,
+      52.22592
+    ],
+    "endCoord": [
+      -0.94058,
+      52.25851
+    ],
+    "status": "commissioning",
+    "plannedStart": "2025-11-28",
+    "plannedFinish": "2026-02-06",
+    "actualStart": "2025-11-30",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [],
+    "comments": "Protection testing in progress, outage scheduled with DNO.",
+    "predecessors": [
+      "A1030"
+    ],
+    "successors": [
+      "A1050"
+    ],
+    "freeFloat": 4
+  },
+  {
+    "sectionId": "RA-006",
+    "p6ActivityId": "A1050",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 6",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 25,
+    "chainageEndKm": 30,
+    "startCoord": [
+      -0.94058,
+      52.25851
+    ],
+    "endCoord": [
+      -0.97524,
+      52.29743
+    ],
+    "status": "commissioning",
+    "plannedStart": "2025-12-20",
+    "plannedFinish": "2026-02-28",
+    "actualStart": "2025-12-18",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [],
+    "comments": "Pre-energisation checks complete, awaiting switching schedule.",
+    "predecessors": [
+      "A1040"
+    ],
+    "successors": [
+      "A1060"
+    ],
+    "freeFloat": 5
+  },
+  {
+    "sectionId": "RA-007",
+    "p6ActivityId": "A1060",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 7",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 30,
+    "chainageEndKm": 35,
+    "startCoord": [
+      -0.97524,
+      52.29743
+    ],
+    "endCoord": [
+      -1.02868,
+      52.32762
+    ],
+    "status": "commissioning",
+    "plannedStart": "2026-01-11",
+    "plannedFinish": "2026-03-22",
+    "actualStart": "2026-01-10",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [
+      "Utility diversion pending (water main)"
+    ],
+    "comments": "Protection testing in progress, outage scheduled with DNO.",
+    "predecessors": [
+      "A1050"
+    ],
+    "successors": [
+      "A1070"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RA-008",
+    "p6ActivityId": "A1070",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 8",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 35,
+    "chainageEndKm": 40,
+    "startCoord": [
+      -1.02868,
+      52.32762
+    ],
+    "endCoord": [
+      -1.05301,
+      52.36871
+    ],
+    "status": "commissioning",
+    "plannedStart": "2026-02-02",
+    "plannedFinish": "2026-04-13",
+    "actualStart": "2026-02-02",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [],
+    "comments": "Pre-energisation checks complete, awaiting switching schedule.",
+    "predecessors": [
+      "A1060"
+    ],
+    "successors": [
+      "A1080"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RA-009",
+    "p6ActivityId": "A1080",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 9",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 40,
+    "chainageEndKm": 45,
+    "startCoord": [
+      -1.05301,
+      52.36871
+    ],
+    "endCoord": [
+      -1.11201,
+      52.39392
+    ],
+    "status": "main works ongoing",
+    "plannedStart": "2026-02-24",
+    "plannedFinish": "2026-05-05",
+    "actualStart": "2026-02-25",
+    "actualFinish": null,
+    "percentComplete": 50,
+    "resourcesOnSite": [
+      "Cable jointing crew A",
+      "Tower erection gang A"
+    ],
+    "blockers": [],
+    "comments": "Conductor stringing underway, weather delays on two days this week.",
+    "predecessors": [
+      "A1070"
+    ],
+    "successors": [
+      "A1090"
+    ],
+    "freeFloat": 4
+  },
+  {
+    "sectionId": "RA-010",
+    "p6ActivityId": "A1090",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 10",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 45,
+    "chainageEndKm": 50,
+    "startCoord": [
+      -1.11201,
+      52.39392
+    ],
+    "endCoord": [
+      -1.13382,
+      52.43582
+    ],
+    "status": "main works ongoing",
+    "plannedStart": "2026-03-18",
+    "plannedFinish": "2026-05-27",
+    "actualStart": "2026-03-20",
+    "actualFinish": null,
+    "percentComplete": 50,
+    "resourcesOnSite": [
+      "Cable jointing crew B",
+      "Tower erection gang B"
+    ],
+    "blockers": [],
+    "comments": "Foundation works complete, tower steelwork erection in progress.",
+    "predecessors": [
+      "A1080"
+    ],
+    "successors": [
+      "A1100"
+    ],
+    "freeFloat": 8
+  },
+  {
+    "sectionId": "RA-011",
+    "p6ActivityId": "A1100",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 11",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 50,
+    "chainageEndKm": 55,
+    "startCoord": [
+      -1.13382,
+      52.43582
+    ],
+    "endCoord": [
+      -1.16589,
+      52.47443
+    ],
+    "status": "main works ongoing",
+    "plannedStart": "2026-04-09",
+    "plannedFinish": "2026-06-18",
+    "actualStart": "2026-04-07",
+    "actualFinish": null,
+    "percentComplete": 50,
+    "resourcesOnSite": [
+      "Excavator team A",
+      "Traffic management crew A"
+    ],
+    "blockers": [],
+    "comments": "Cable pulling in progress between joint bays.",
+    "predecessors": [
+      "A1090"
+    ],
+    "successors": [
+      "A1110"
+    ],
+    "freeFloat": 7
+  },
+  {
+    "sectionId": "RA-012",
+    "p6ActivityId": "A1110",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 12",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 55,
+    "chainageEndKm": 60,
+    "startCoord": [
+      -1.16589,
+      52.47443
+    ],
+    "endCoord": [
+      -1.18384,
+      52.51432
+    ],
+    "status": "preparing",
+    "plannedStart": "2026-05-01",
+    "plannedFinish": "2026-07-10",
+    "actualStart": "2026-04-30",
+    "actualFinish": null,
+    "percentComplete": 15,
+    "resourcesOnSite": [
+      "Excavator team B",
+      "Ecology watch"
+    ],
+    "blockers": [],
+    "comments": "Access track upgrade underway ahead of foundation works.",
+    "predecessors": [
+      "A1100"
+    ],
+    "successors": [
+      "A1120"
+    ],
+    "freeFloat": 1
+  },
+  {
+    "sectionId": "RA-013",
+    "p6ActivityId": "A1120",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 13",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 60,
+    "chainageEndKm": 65,
+    "startCoord": [
+      -1.18384,
+      52.51432
+    ],
+    "endCoord": [
+      -1.20692,
+      52.55554
+    ],
+    "status": "not started",
+    "plannedStart": "2026-05-23",
+    "plannedFinish": "2026-08-01",
+    "actualStart": null,
+    "actualFinish": null,
+    "percentComplete": 0,
+    "resourcesOnSite": [],
+    "blockers": [
+      "Environmental survey outstanding"
+    ],
+    "comments": "Section not yet mobilised. Awaiting resource release from predecessor activity.",
+    "predecessors": [
+      "A1110"
+    ],
+    "successors": [
+      "A1130"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RA-014",
+    "p6ActivityId": "A1130",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 14",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 65,
+    "chainageEndKm": 70,
+    "startCoord": [
+      -1.20692,
+      52.55554
+    ],
+    "endCoord": [
+      -1.2156,
+      52.59904
+    ],
+    "status": "not started",
+    "plannedStart": "2026-06-14",
+    "plannedFinish": "2026-08-23",
+    "actualStart": null,
+    "actualFinish": null,
+    "percentComplete": 0,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Design freeze issued; site establishment pending.",
+    "predecessors": [
+      "A1120"
+    ],
+    "successors": [
+      "A1140"
+    ],
+    "freeFloat": 7
+  },
+  {
+    "sectionId": "RA-015",
+    "p6ActivityId": "A1140",
+    "wbsPath": "Grid Upgrade > Route M1-A > Section 15",
+    "routeId": "M1-A",
+    "routeName": "M1-A",
+    "chainageStartKm": 70,
+    "chainageEndKm": 75,
+    "startCoord": [
+      -1.2156,
+      52.59904
+    ],
+    "endCoord": [
+      -1.20717,
+      52.64009
+    ],
+    "status": "not started",
+    "plannedStart": "2026-07-06",
+    "plannedFinish": "2026-09-14",
+    "actualStart": null,
+    "actualFinish": null,
+    "percentComplete": 0,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Section not yet mobilised. Awaiting resource release from predecessor activity.",
+    "predecessors": [
+      "A1130"
+    ],
+    "successors": [],
+    "freeFloat": 4
+  },
+  {
+    "sectionId": "RB-001",
+    "p6ActivityId": "A2000",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 1",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 0,
+    "chainageEndKm": 5,
+    "startCoord": [
+      -0.89083,
+      52.22592
+    ],
+    "endCoord": [
+      -0.95085,
+      52.25182
+    ],
+    "status": "completed",
+    "plannedStart": "2025-10-31",
+    "plannedFinish": "2026-01-09",
+    "actualStart": "2025-10-29",
+    "actualFinish": "2026-01-08",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Section energised and handed over to operations.",
+    "predecessors": [
+      "A1030"
+    ],
+    "successors": [
+      "A2010"
+    ],
+    "freeFloat": 7
+  },
+  {
+    "sectionId": "RB-002",
+    "p6ActivityId": "A2010",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 2",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 5,
+    "chainageEndKm": 10,
+    "startCoord": [
+      -0.95085,
+      52.25182
+    ],
+    "endCoord": [
+      -1.01047,
+      52.2781
+    ],
+    "status": "completed",
+    "plannedStart": "2025-11-22",
+    "plannedFinish": "2026-01-31",
+    "actualStart": "2025-11-21",
+    "actualFinish": "2026-01-31",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Snagging closed out, as-built survey submitted.",
+    "predecessors": [
+      "A2000"
+    ],
+    "successors": [
+      "A2020"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RB-003",
+    "p6ActivityId": "A2020",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 3",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 10,
+    "chainageEndKm": 15,
+    "startCoord": [
+      -1.01047,
+      52.2781
+    ],
+    "endCoord": [
+      -1.07213,
+      52.30256
+    ],
+    "status": "completed",
+    "plannedStart": "2025-12-14",
+    "plannedFinish": "2026-02-22",
+    "actualStart": "2025-12-14",
+    "actualFinish": "2026-02-23",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Section energised and handed over to operations.",
+    "predecessors": [
+      "A2010"
+    ],
+    "successors": [
+      "A2030"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RB-004",
+    "p6ActivityId": "A2030",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 4",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 15,
+    "chainageEndKm": 20,
+    "startCoord": [
+      -1.07213,
+      52.30256
+    ],
+    "endCoord": [
+      -1.13611,
+      52.32474
+    ],
+    "status": "completed",
+    "plannedStart": "2026-01-05",
+    "plannedFinish": "2026-03-16",
+    "actualStart": "2026-01-06",
+    "actualFinish": "2026-03-18",
+    "percentComplete": 100,
+    "resourcesOnSite": [],
+    "blockers": [],
+    "comments": "Snagging closed out, as-built survey submitted.",
+    "predecessors": [
+      "A2020"
+    ],
+    "successors": [
+      "A2040"
+    ],
+    "freeFloat": 3
+  },
+  {
+    "sectionId": "RB-005",
+    "p6ActivityId": "A2040",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 5",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 20,
+    "chainageEndKm": 25,
+    "startCoord": [
+      -1.13611,
+      52.32474
+    ],
+    "endCoord": [
+      -1.20052,
+      52.34648
+    ],
+    "status": "commissioning",
+    "plannedStart": "2026-01-27",
+    "plannedFinish": "2026-04-07",
+    "actualStart": "2026-01-29",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [],
+    "comments": "Protection testing in progress, outage scheduled with DNO.",
+    "predecessors": [
+      "A2030"
+    ],
+    "successors": [
+      "A2050"
+    ],
+    "freeFloat": 4
+  },
+  {
+    "sectionId": "RB-006",
+    "p6ActivityId": "A2050",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 6",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 25,
+    "chainageEndKm": 30,
+    "startCoord": [
+      -1.20052,
+      52.34648
+    ],
+    "endCoord": [
+      -1.26316,
+      52.3701
+    ],
+    "status": "commissioning",
+    "plannedStart": "2026-02-18",
+    "plannedFinish": "2026-04-29",
+    "actualStart": "2026-02-16",
+    "actualFinish": null,
+    "percentComplete": 85,
+    "resourcesOnSite": [
+      "HV testing team"
+    ],
+    "blockers": [],
+    "comments": "Pre-energisation checks complete, awaiting switching schedule.",
+    "predecessors": [
+      "A2040"
+    ],
+    "successors": [
+      "A2060"
+    ],
+    "freeFloat": 5
+  },
+  {
+    "sectionId": "RB-007",
+    "p6ActivityId": "A2060",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 7",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 30,
+    "chainageEndKm": 35,
+    "startCoord": [
+      -1.26316,
+      52.3701
+    ],
+    "endCoord": [
+      -1.33142,
+      52.37946
+    ],
+    "status": "main works ongoing",
+    "plannedStart": "2026-03-12",
+    "plannedFinish": "2026-05-21",
+    "actualStart": "2026-03-11",
+    "actualFinish": null,
+    "percentComplete": 50,
+    "resourcesOnSite": [
+      "Traffic management crew A",
+      "Excavator team A"
+    ],
+    "blockers": [
+      "Utility diversion pending (water main)"
+    ],
+    "comments": "Foundation works complete, tower steelwork erection in progress.",
+    "predecessors": [
+      "A2050"
+    ],
+    "successors": [
+      "A2070"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RB-008",
+    "p6ActivityId": "A2070",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 8",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 35,
+    "chainageEndKm": 40,
+    "startCoord": [
+      -1.33142,
+      52.37946
+    ],
+    "endCoord": [
+      -1.39845,
+      52.3932
+    ],
+    "status": "main works ongoing",
+    "plannedStart": "2026-04-03",
+    "plannedFinish": "2026-06-12",
+    "actualStart": "2026-04-03",
+    "actualFinish": null,
+    "percentComplete": 50,
+    "resourcesOnSite": [
+      "Traffic management crew B",
+      "Excavator team B"
+    ],
+    "blockers": [],
+    "comments": "Cable pulling in progress between joint bays.",
+    "predecessors": [
+      "A2060"
+    ],
+    "successors": [
+      "A2080"
+    ],
+    "freeFloat": 0
+  },
+  {
+    "sectionId": "RB-009",
+    "p6ActivityId": "A2080",
+    "wbsPath": "Grid Upgrade > Route Rugby-Coventry Spur > Section 9",
+    "routeId": "SPUR-B",
+    "routeName": "Rugby-Coventry Spur",
+    "chainageStartKm": 40,
+    "chainageEndKm": 45,
+    "startCoord": [
+      -1.39845,
+      52.3932
+    ],
+    "endCoord": [
+      -1.46847,
+      52.40645
+    ],
+    "status": "preparing",
+    "plannedStart": "2026-04-25",
+    "plannedFinish": "2026-07-04",
+    "actualStart": "2026-04-26",
+    "actualFinish": null,
+    "percentComplete": 15,
+    "resourcesOnSite": [
+      "Cable jointing crew A",
+      "Ecology watch"
+    ],
+    "blockers": [],
+    "comments": "Site compound established, welfare units on site.",
+    "predecessors": [
+      "A2070"
+    ],
+    "successors": [],
+    "freeFloat": 4
+  }
+]
