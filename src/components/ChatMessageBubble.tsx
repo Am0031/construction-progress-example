@@ -1,4 +1,4 @@
-import type { ChatMessage } from '../lib/groqClient';
+import type { ChatMessage } from '../types/chat';
 
 interface ChatMessageBubbleProps {
   message: ChatMessage;

@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from 'react';
 import ChatMessageBubble from '../components/ChatMessageBubble';
-import { hasGroqApiKey, sendChatMessage, type ChatMessage } from '../lib/groqClient';
+import { getChatProviderInfo, sendChatMessage } from '../lib/chatClient';
+import type { ChatMessage } from '../types/chat';
 import { buildSystemPrompt } from '../lib/projectContext';
 
 const SUGGESTED_QUESTIONS = [
@@ -19,7 +20,7 @@ const AssistantPage = () => {
   const [error, setError] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const apiKeyConfigured = hasGroqApiKey();
+  const providerInfo = getChatProviderInfo();
 
   async function submitMessage(content: string) {
     if (!content.trim() || isLoading) return;
@@ -48,37 +49,19 @@ const AssistantPage = () => {
     void submitMessage(input);
   }
 
-  if (!apiKeyConfigured) {
-    return (
-      <div className="flex flex-1 items-center justify-center p-6">
-        <div className="max-w-lg rounded-lg border border-amber-200 bg-amber-50 p-6 text-sm text-amber-900">
-          <h2 className="mb-2 text-base font-semibold">Contract Assistant needs a Groq API key</h2>
-          <p className="mb-2">
-            This page calls Groq's free-tier chat API so it needs an API key to run. To set it up:
-          </p>
-          <ol className="list-inside list-decimal space-y-1">
-            <li>
-              Create a free key at{' '}
-              <span className="font-medium">console.groq.com/keys</span>.
-            </li>
-            <li>
-              Copy <code className="rounded bg-amber-100 px-1">.env.example</code> to{' '}
-              <code className="rounded bg-amber-100 px-1">.env</code> in the project root.
-            </li>
-            <li>
-              Set <code className="rounded bg-amber-100 px-1">VITE_GROQ_API_KEY=your-key</code> in
-              that file.
-            </li>
-            <li>Restart the dev server.</li>
-          </ol>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="flex min-h-0 flex-1 justify-center overflow-hidden bg-slate-50 p-6">
       <div className="flex min-h-0 w-full max-w-3xl flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
+        {providerInfo.id === 'pollinations' && (
+          <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900">
+            Demo mode: running on a free public model (no API key), so replies may be slower or
+            lower quality, and it's rate-limited to about one message every 15 seconds. For a
+            better local demo, set <code className="rounded bg-amber-100 px-1">VITE_GROQ_API_KEY</code>{' '}
+            in <code className="rounded bg-amber-100 px-1">.env</code> (see{' '}
+            <code className="rounded bg-amber-100 px-1">.env.example</code>) and restart the dev
+            server.
+          </div>
+        )}
         <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-6">
           {messages.length === 0 && (
             <div>

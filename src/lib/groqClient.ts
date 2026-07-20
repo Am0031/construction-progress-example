@@ -1,7 +1,4 @@
-export interface ChatMessage {
-  role: 'system' | 'user' | 'assistant';
-  content: string;
-}
+import type { ChatMessage } from '../types/chat';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const DEFAULT_MODEL = 'llama-3.3-70b-versatile';
@@ -16,7 +13,7 @@ export function hasGroqApiKey(): boolean {
  * bundle — for a real deployment, proxy this call through a backend so the
  * key isn't exposed to end users.
  */
-export async function sendChatMessage(messages: ChatMessage[]): Promise<string> {
+export async function sendGroqMessage(messages: ChatMessage[]): Promise<string> {
   const apiKey = import.meta.env.VITE_GROQ_API_KEY as string | undefined;
   if (!apiKey) {
     throw new Error('Missing VITE_GROQ_API_KEY. Add it to a .env file and restart the dev server.');
