@@ -25,7 +25,7 @@ const SectionPanel = ({ section, allSections, onClose }: SectionPanelProps) => {
   if (!section) return null;
 
   return (
-    <aside className="flex h-full w-full flex-col overflow-y-auto border-l border-slate-200 bg-white shadow-xl sm:w-96">
+    <aside className="fixed bottom-0 left-0 right-0 top-14 z-40 flex flex-col overflow-y-auto border-t border-slate-200 bg-white shadow-xl sm:static sm:z-auto sm:h-full sm:w-96 sm:border-l sm:border-t-0">
       <div className="flex items-start justify-between border-b border-slate-200 px-5 py-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-wide text-slate-400">

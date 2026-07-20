@@ -47,54 +47,56 @@ const GanttChart = ({ activities }: GanttChartProps) => {
         </div>
 
         <div className="relative flex-1 overflow-x-auto">
-          <div className="relative h-8 border-b border-slate-100">
-            {monthTicks.map((tick) => (
-              <div
-                key={tick.toISOString()}
-                className="absolute top-0 h-full border-l border-slate-100 pl-1.5 text-[11px] leading-8 text-slate-400"
-                style={{ left: `${toPct(tick)}%` }}
-              >
-                {tick.toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })}
-              </div>
-            ))}
-          </div>
-
-          <div className="relative">
-            {showToday && (
-              <div
-                className="pointer-events-none absolute top-0 z-10 h-full border-l-2 border-dashed border-rose-400"
-                style={{ left: `${todayPct}%` }}
-              >
-                <span className="absolute -top-0 left-1 whitespace-nowrap text-[10px] font-medium text-rose-500">
-                  Today
-                </span>
-              </div>
-            )}
-
-            {activities.map((activity) => {
-              const plannedStartD = toDate(activity.plannedStart);
-              const plannedFinishD = toDate(activity.plannedFinish);
-              const left = toPct(plannedStartD);
-              const width = Math.max(toPct(plannedFinishD) - left, 0.8);
-              const color = ACTIVITY_STATUS_COLORS[activity.status];
-
-              return (
+          <div className="relative min-w-[640px]">
+            <div className="relative h-8 border-b border-slate-100">
+              {monthTicks.map((tick) => (
                 <div
-                  key={activity.activityId}
-                  className="relative flex h-11 items-center border-b border-slate-50"
+                  key={tick.toISOString()}
+                  className="absolute top-0 h-full border-l border-slate-100 pl-1.5 text-[11px] leading-8 text-slate-400"
+                  style={{ left: `${toPct(tick)}%` }}
                 >
+                  {tick.toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })}
+                </div>
+              ))}
+            </div>
+
+            <div className="relative">
+              {showToday && (
+                <div
+                  className="pointer-events-none absolute top-0 z-10 h-full border-l-2 border-dashed border-rose-400"
+                  style={{ left: `${todayPct}%` }}
+                >
+                  <span className="absolute -top-0 left-1 whitespace-nowrap text-[10px] font-medium text-rose-500">
+                    Today
+                  </span>
+                </div>
+              )}
+
+              {activities.map((activity) => {
+                const plannedStartD = toDate(activity.plannedStart);
+                const plannedFinishD = toDate(activity.plannedFinish);
+                const left = toPct(plannedStartD);
+                const width = Math.max(toPct(plannedFinishD) - left, 0.8);
+                const color = ACTIVITY_STATUS_COLORS[activity.status];
+
+                return (
                   <div
-                    className="group absolute h-5 rounded-full"
-                    style={{ left: `${left}%`, width: `${width}%`, backgroundColor: color }}
+                    key={activity.activityId}
+                    className="relative flex h-11 items-center border-b border-slate-50"
                   >
-                    <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-[11px] text-white group-hover:block">
-                      {activity.activityId} &middot; {formatShortDate(plannedStartD)}&ndash;
-                      {formatShortDate(plannedFinishD)} &middot; {activity.percentComplete}%
+                    <div
+                      className="group absolute h-5 rounded-full"
+                      style={{ left: `${left}%`, width: `${width}%`, backgroundColor: color }}
+                    >
+                      <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-[11px] text-white group-hover:block">
+                        {activity.activityId} &middot; {formatShortDate(plannedStartD)}&ndash;
+                        {formatShortDate(plannedFinishD)} &middot; {activity.percentComplete}%
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -5,7 +5,8 @@ import PowerStationsMap from '../components/PowerStationsMap';
 import StationPanel from '../components/StationPanel';
 import PlanningZonesMap from '../components/PlanningZonesMap';
 import ZonePanel from '../components/ZonePanel';
-import LayerSidebar, { type MapLayerId } from '../components/LayerSidebar';
+import LayerSidebar, { MAP_LAYERS, type MapLayerId } from '../components/LayerSidebar';
+import MobileDrawer from '../components/MobileDrawer';
 import sectionsData from '../data/sections.json';
 import powerStationsData from '../data/powerStations.json';
 import planningZonesData from '../data/planningZones.json';
@@ -22,17 +23,31 @@ const MapPage = () => {
   const [selectedSection, setSelectedSection] = useState<Section | null>(null);
   const [selectedStation, setSelectedStation] = useState<PowerStation | null>(null);
   const [selectedZone, setSelectedZone] = useState<PlanningZone | null>(null);
+  const [layersOpen, setLayersOpen] = useState(false);
 
   function handleLayerChange(layer: MapLayerId) {
     setActiveLayer(layer);
     setSelectedSection(null);
     setSelectedStation(null);
     setSelectedZone(null);
+    setLayersOpen(false);
   }
 
+  const activeLayerLabel = MAP_LAYERS.find((layer) => layer.id === activeLayer)?.label;
+
   return (
-    <div className="flex min-h-0 flex-1">
-      <LayerSidebar activeLayer={activeLayer} onChange={handleLayerChange} />
+    <div className="relative flex min-h-0 flex-1">
+      <button
+        type="button"
+        onClick={() => setLayersOpen(true)}
+        className="absolute left-3 top-3 z-20 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm sm:hidden"
+      >
+        Layer: {activeLayerLabel}
+      </button>
+
+      <MobileDrawer open={layersOpen} onClose={() => setLayersOpen(false)}>
+        <LayerSidebar activeLayer={activeLayer} onChange={handleLayerChange} />
+      </MobileDrawer>
 
       <div className="min-w-0 flex-1">
         {activeLayer === 'cable-network' && (

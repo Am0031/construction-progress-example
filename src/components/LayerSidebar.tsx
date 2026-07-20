@@ -25,7 +25,7 @@ interface LayerSidebarProps {
 
 const LayerSidebar = ({ activeLayer, onChange }: LayerSidebarProps) => {
   return (
-    <nav className="w-56 shrink-0 border-r border-slate-200 bg-slate-50 p-3">
+    <nav className="h-full w-56 shrink-0 overflow-y-auto border-r border-slate-200 bg-slate-50 p-3">
       <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
         Map view
       </p>

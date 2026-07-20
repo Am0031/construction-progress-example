@@ -44,56 +44,59 @@ const ResourceTimeline = ({ assignmentsByResource }: ResourceTimelineProps) => {
         </div>
 
         <div className="relative flex-1 overflow-x-auto">
-          <div className="relative h-8 border-b border-slate-100">
-            {monthTicks.map((tick) => (
-              <div
-                key={tick.toISOString()}
-                className="absolute top-0 h-full border-l border-slate-100 pl-1.5 text-[11px] leading-8 text-slate-400"
-                style={{ left: `${toPct(tick)}%` }}
-              >
-                {tick.toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })}
-              </div>
-            ))}
-          </div>
-
-          <div className="relative">
-            {showToday && (
-              <div
-                className="pointer-events-none absolute top-0 z-10 h-full border-l-2 border-dashed border-rose-400"
-                style={{ left: `${todayPct}%` }}
-              >
-                <span className="absolute -top-0 left-1 whitespace-nowrap text-[10px] font-medium text-rose-500">
-                  Today
-                </span>
-              </div>
-            )}
-
-            {resources.map((resource) => {
-              const assignments = assignmentsByResource[resource];
-              return (
-                <div key={resource} className="relative h-14 border-b border-slate-50">
-                  {assignments.map((a, i) => {
-                    const left = toPct(a.start);
-                    const width = Math.max(toPct(a.finish) - left, 0.8);
-                    const conflicted = a.overlapsWith.length > 0;
-                    return (
-                      <div
-                        key={a.sectionId}
-                        className={`group absolute h-5 rounded-full ${
-                          conflicted ? 'bg-rose-500' : 'bg-blue-600'
-                        }`}
-                        style={{ left: `${left}%`, width: `${width}%`, top: 8 + (i % 2) * 22 }}
-                      >
-                        <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-[11px] text-white group-hover:block">
-                          {a.label} &middot; {formatShortDate(a.start)}&ndash;{formatShortDate(a.finish)}
-                          {conflicted && ` · conflicts with ${a.overlapsWith.join(', ')}`}
-                        </div>
-                      </div>
-                    );
-                  })}
+          <div className="relative min-w-[640px]">
+            <div className="relative h-8 border-b border-slate-100">
+              {monthTicks.map((tick) => (
+                <div
+                  key={tick.toISOString()}
+                  className="absolute top-0 h-full border-l border-slate-100 pl-1.5 text-[11px] leading-8 text-slate-400"
+                  style={{ left: `${toPct(tick)}%` }}
+                >
+                  {tick.toLocaleDateString('en-GB', { month: 'short', year: '2-digit' })}
                 </div>
-              );
-            })}
+              ))}
+            </div>
+
+            <div className="relative">
+              {showToday && (
+                <div
+                  className="pointer-events-none absolute top-0 z-10 h-full border-l-2 border-dashed border-rose-400"
+                  style={{ left: `${todayPct}%` }}
+                >
+                  <span className="absolute -top-0 left-1 whitespace-nowrap text-[10px] font-medium text-rose-500">
+                    Today
+                  </span>
+                </div>
+              )}
+
+              {resources.map((resource) => {
+                const assignments = assignmentsByResource[resource];
+                return (
+                  <div key={resource} className="relative h-14 border-b border-slate-50">
+                    {assignments.map((a, i) => {
+                      const left = toPct(a.start);
+                      const width = Math.max(toPct(a.finish) - left, 0.8);
+                      const conflicted = a.overlapsWith.length > 0;
+                      return (
+                        <div
+                          key={a.sectionId}
+                          className={`group absolute h-5 rounded-full ${
+                            conflicted ? 'bg-rose-500' : 'bg-blue-600'
+                          }`}
+                          style={{ left: `${left}%`, width: `${width}%`, top: 8 + (i % 2) * 22 }}
+                        >
+                          <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-slate-800 px-2 py-1 text-[11px] text-white group-hover:block">
+                            {a.label} &middot; {formatShortDate(a.start)}&ndash;
+                            {formatShortDate(a.finish)}
+                            {conflicted && ` · conflicts with ${a.overlapsWith.join(', ')}`}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import SectionList from '../components/SectionList';
 import GanttChart from '../components/GanttChart';
+import MobileDrawer from '../components/MobileDrawer';
 import sectionsData from '../data/sections.json';
 import activitiesData from '../data/activities.json';
 import type { Section } from '../types/section';
@@ -15,6 +16,7 @@ const DEFAULT_SECTION_ID = 'RA-013';
 
 const GanttPage = () => {
   const [selectedSectionId, setSelectedSectionId] = useState<string>(DEFAULT_SECTION_ID);
+  const [sectionsOpen, setSectionsOpen] = useState(false);
 
   const selectedSection = useMemo(
     () => sections.find((s) => s.sectionId === selectedSectionId) ?? null,
@@ -25,17 +27,30 @@ const GanttPage = () => {
   const demoSectionIds = useMemo(() => new Set(activityGroups.map((g) => g.sectionId)), []);
 
   return (
-    <div className="flex min-h-0 flex-1">
-      <div className="w-64 shrink-0 border-r border-slate-200 bg-slate-50">
-        <SectionList
-          sections={sections}
-          selectedSectionId={selectedSectionId}
-          onSelect={(s) => setSelectedSectionId(s.sectionId)}
-          hasDetail={(id) => demoSectionIds.has(id)}
-        />
-      </div>
+    <div className="relative flex min-h-0 flex-1">
+      <button
+        type="button"
+        onClick={() => setSectionsOpen(true)}
+        className="absolute left-3 top-3 z-20 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 shadow-sm sm:hidden"
+      >
+        Section: {selectedSection?.sectionId ?? 'Select'}
+      </button>
 
-      <div className="min-w-0 flex-1 overflow-y-auto p-6">
+      <MobileDrawer open={sectionsOpen} onClose={() => setSectionsOpen(false)}>
+        <div className="h-full w-64 shrink-0 border-r border-slate-200 bg-slate-50">
+          <SectionList
+            sections={sections}
+            selectedSectionId={selectedSectionId}
+            onSelect={(s) => {
+              setSelectedSectionId(s.sectionId);
+              setSectionsOpen(false);
+            }}
+            hasDetail={(id) => demoSectionIds.has(id)}
+          />
+        </div>
+      </MobileDrawer>
+
+      <div className="min-w-0 flex-1 overflow-y-auto p-6 pt-14 sm:pt-6">
         {!selectedSection ? (
           <p className="text-sm text-slate-500">Select a section from the list.</p>
         ) : !selectedActivities ? (
