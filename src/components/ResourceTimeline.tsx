@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import type { ResourceAssignment } from '../lib/resourceMetrics';
 import { computeTimelineScale, formatShortDate } from '../lib/timelineScale';
 
@@ -8,6 +8,11 @@ interface ResourceTimelineProps {
 
 const ResourceTimeline = ({ assignmentsByResource }: ResourceTimelineProps) => {
   const resources = Object.keys(assignmentsByResource);
+  const [selectedResource, setSelectedResource] = useState<string | null>(null);
+
+  function toggleResource(resource: string) {
+    setSelectedResource((prev) => (prev === resource ? null : resource));
+  }
 
   const { toPct, monthTicks, todayPct, showToday } = useMemo(() => {
     const allDates = Object.values(assignmentsByResource)
@@ -34,13 +39,17 @@ const ResourceTimeline = ({ assignmentsByResource }: ResourceTimelineProps) => {
           <div className="w-56 shrink-0 border-r border-slate-100">
             <div className="h-8 border-b border-slate-100" />
             {resources.map((resource) => (
-              <div
+              <button
                 key={resource}
-                className="flex h-14 items-center border-b border-slate-50 px-3 text-xs text-slate-700"
+                type="button"
+                onClick={() => toggleResource(resource)}
                 title={resource}
+                className={`flex h-14 w-full items-center border-b border-slate-50 px-3 text-left text-xs text-slate-700 transition-colors ${
+                  selectedResource === resource ? 'bg-blue-50' : 'hover:bg-slate-50'
+                }`}
               >
                 <span className="truncate">{resource}</span>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -72,7 +81,21 @@ const ResourceTimeline = ({ assignmentsByResource }: ResourceTimelineProps) => {
               {resources.map((resource) => {
                 const assignments = assignmentsByResource[resource];
                 return (
-                  <div key={resource} className="relative h-14 border-b border-slate-50">
+                  <div
+                    key={resource}
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => toggleResource(resource)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleResource(resource);
+                      }
+                    }}
+                    className={`relative h-14 cursor-pointer border-b border-slate-50 transition-colors ${
+                      selectedResource === resource ? 'bg-blue-50' : 'hover:bg-slate-50'
+                    }`}
+                  >
                     {assignments.map((a, i) => {
                       const left = toPct(a.start);
                       const width = Math.max(toPct(a.finish) - left, 0.8);

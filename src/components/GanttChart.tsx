@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import type { ChildActivity } from '../types/activity';
 import { ACTIVITY_STATUS_COLORS } from '../lib/activityColors';
 import { ACTIVITY_STATUSES } from '../types/activity';
@@ -9,6 +9,12 @@ interface GanttChartProps {
 }
 
 const GanttChart = ({ activities }: GanttChartProps) => {
+  const [selectedActivityId, setSelectedActivityId] = useState<string | null>(null);
+
+  function toggleActivity(activityId: string) {
+    setSelectedActivityId((prev) => (prev === activityId ? null : activityId));
+  }
+
   const { toPct, monthTicks, todayPct, showToday } = useMemo(() => {
     const allDates = activities.flatMap((a) =>
       [a.plannedStart, a.plannedFinish, a.actualStart, a.actualFinish].filter(
@@ -37,13 +43,17 @@ const GanttChart = ({ activities }: GanttChartProps) => {
           <div className="w-56 shrink-0 border-r border-slate-100">
             <div className="h-8 border-b border-slate-100" />
             {activities.map((activity) => (
-              <div
+              <button
                 key={activity.activityId}
-                className="flex h-11 items-center border-b border-slate-50 px-3 text-xs text-slate-700"
+                type="button"
+                onClick={() => toggleActivity(activity.activityId)}
                 title={activity.name}
+                className={`flex h-11 w-full items-center border-b border-slate-50 px-3 text-left text-xs text-slate-700 transition-colors ${
+                  selectedActivityId === activity.activityId ? 'bg-blue-50' : 'hover:bg-slate-50'
+                }`}
               >
                 <span className="truncate">{activity.name}</span>
-              </div>
+              </button>
             ))}
           </div>
 
@@ -82,7 +92,18 @@ const GanttChart = ({ activities }: GanttChartProps) => {
                 return (
                   <div
                     key={activity.activityId}
-                    className="relative flex h-11 items-center border-b border-slate-50"
+                    role="button"
+                    tabIndex={0}
+                    onClick={() => toggleActivity(activity.activityId)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleActivity(activity.activityId);
+                      }
+                    }}
+                    className={`relative flex h-11 cursor-pointer items-center border-b border-slate-50 transition-colors ${
+                      selectedActivityId === activity.activityId ? 'bg-blue-50' : 'hover:bg-slate-50'
+                    }`}
                   >
                     <div
                       className="group absolute h-5 rounded-full"
