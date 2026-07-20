@@ -32,22 +32,22 @@ const GanttChart = ({ activities }: GanttChartProps) => {
         ))}
       </div>
 
-      <div className="flex">
-        <div className="w-56 shrink-0 border-r border-slate-100">
-          <div className="h-8 border-b border-slate-100" />
-          {activities.map((activity) => (
-            <div
-              key={activity.activityId}
-              className="flex h-11 items-center border-b border-slate-50 px-3 text-xs text-slate-700"
-              title={activity.name}
-            >
-              <span className="truncate">{activity.name}</span>
-            </div>
-          ))}
-        </div>
+      <div className="overflow-x-auto">
+        <div className="flex min-w-[900px]">
+          <div className="w-56 shrink-0 border-r border-slate-100">
+            <div className="h-8 border-b border-slate-100" />
+            {activities.map((activity) => (
+              <div
+                key={activity.activityId}
+                className="flex h-11 items-center border-b border-slate-50 px-3 text-xs text-slate-700"
+                title={activity.name}
+              >
+                <span className="truncate">{activity.name}</span>
+              </div>
+            ))}
+          </div>
 
-        <div className="relative flex-1 overflow-x-auto">
-          <div className="relative min-w-[640px]">
+          <div className="relative flex-1">
             <div className="relative h-8 border-b border-slate-100">
               {monthTicks.map((tick) => (
                 <div
