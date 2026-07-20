@@ -11,12 +11,13 @@ import AssistantPage from './pages/AssistantPage';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className="flex h-screen w-screen flex-col bg-slate-100">
         <Navbar />
         <main className="flex min-h-0 flex-1">
           <Routes>
-            <Route path="/" element={<DashboardPage />} />
+            <Route path="/" element={<MapPage />} />
+            <Route path="/overview" element={<DashboardPage />} />
             <Route path="/map" element={<MapPage />} />
             <Route path="/programme" element={<GanttPage />} />
             <Route path="/resources" element={<ResourcesPage />} />
