@@ -52,7 +52,7 @@ const AssistantPage = () => {
   return (
     <div className="flex min-h-0 flex-1 justify-center overflow-hidden bg-slate-50 p-6">
       <div className="flex min-h-0 w-full max-w-3xl flex-col rounded-lg border border-slate-200 bg-white shadow-sm">
-        {providerInfo.id === 'pollinations' && (
+        {providerInfo.id === 'pollinations' ? (
           <div className="border-b border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900">
             Demo mode: running on a free public model (no API key), so replies may be slower or
             lower quality, and it's rate-limited to about one message every 15 seconds. For a
@@ -60,6 +60,10 @@ const AssistantPage = () => {
             in <code className="rounded bg-amber-100 px-1">.env</code> (see{' '}
             <code className="rounded bg-amber-100 px-1">.env.example</code>) and restart the dev
             server.
+          </div>
+        ) : (
+          <div className="border-b border-emerald-200 bg-emerald-50 px-4 py-2 text-xs text-emerald-900">
+            Groq API key detected — running on {providerInfo.label}.
           </div>
         )}
         <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto p-6">
