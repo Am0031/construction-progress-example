@@ -102,11 +102,15 @@ const ReportPage = () => {
         <div className='no-print rounded-lg border border-slate-200 bg-white p-4 shadow-sm'>
           <div className='mb-2 flex items-center justify-between gap-3'>
             <p className='text-xs font-semibold uppercase tracking-wide text-slate-500'>
-              Which sections do you want to include in the print?
+              Sections to include
             </p>
             <button
               type='button'
-              onClick={() => setIncludedSections(new Set(REPORT_SECTIONS.map((section) => section.id)))}
+              onClick={() =>
+                setIncludedSections(
+                  new Set(REPORT_SECTIONS.map((section) => section.id)),
+                )
+              }
               disabled={includedSections.size === REPORT_SECTIONS.length}
               className='shrink-0 cursor-pointer text-xs font-medium text-blue-600 hover:text-blue-800 disabled:cursor-default disabled:text-slate-300 disabled:hover:text-slate-300'
             >

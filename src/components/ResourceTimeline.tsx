@@ -29,22 +29,22 @@ const ResourceTimeline = ({ assignmentsByResource }: ResourceTimelineProps) => {
         </span>
       </div>
 
-      <div className="flex">
-        <div className="w-56 shrink-0 border-r border-slate-100">
-          <div className="h-8 border-b border-slate-100" />
-          {resources.map((resource) => (
-            <div
-              key={resource}
-              className="flex h-14 items-center border-b border-slate-50 px-3 text-xs text-slate-700"
-              title={resource}
-            >
-              <span className="truncate">{resource}</span>
-            </div>
-          ))}
-        </div>
+      <div className="overflow-x-auto">
+        <div className="flex min-w-[900px]">
+          <div className="w-56 shrink-0 border-r border-slate-100">
+            <div className="h-8 border-b border-slate-100" />
+            {resources.map((resource) => (
+              <div
+                key={resource}
+                className="flex h-14 items-center border-b border-slate-50 px-3 text-xs text-slate-700"
+                title={resource}
+              >
+                <span className="truncate">{resource}</span>
+              </div>
+            ))}
+          </div>
 
-        <div className="relative flex-1 overflow-x-auto">
-          <div className="relative min-w-[640px]">
+          <div className="relative flex-1">
             <div className="relative h-8 border-b border-slate-100">
               {monthTicks.map((tick) => (
                 <div
