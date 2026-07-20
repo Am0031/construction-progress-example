@@ -14,7 +14,7 @@ const RiskRegisterPage = () => {
   const mitigatingCount = risks.filter((r) => r.status === 'mitigating').length;
 
   return (
-    <div className="flex min-h-0 flex-1">
+    <div className="flex min-h-0 min-w-0 flex-1">
       <div className="min-w-0 flex-1 overflow-y-auto bg-slate-100 p-6">
         <div className="mx-auto max-w-5xl space-y-4">
           <div>

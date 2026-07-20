@@ -12,7 +12,7 @@ import AssistantPage from './pages/AssistantPage';
 const App = () => {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <div className='flex h-screen w-screen flex-col bg-slate-100'>
+      <div className='flex h-screen w-screen flex-col overflow-x-hidden bg-slate-100'>
         <Navbar />
         <main className='flex min-h-0 flex-1'>
           <Routes>
