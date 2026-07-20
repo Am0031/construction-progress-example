@@ -2,7 +2,10 @@ import { useMemo, useState } from 'react';
 import StatTile from '../components/StatTile';
 import StatusBreakdownChart from '../components/StatusBreakdownChart';
 import { computeDashboardMetrics } from '../lib/dashboardMetrics';
-import { computeResourceAssignments, countConflictedResources } from '../lib/resourceMetrics';
+import {
+  computeResourceAssignments,
+  countConflictedResources,
+} from '../lib/resourceMetrics';
 import { riskScore } from '../lib/riskColors';
 import sectionsData from '../data/sections.json';
 import powerStationsData from '../data/powerStations.json';
@@ -37,9 +40,9 @@ type ReportSectionId = (typeof REPORT_SECTIONS)[number]['id'];
 
 const ReportPage = () => {
   const now = useMemo(() => new Date(), []);
-  const [includedSections, setIncludedSections] = useState<Set<ReportSectionId>>(
-    () => new Set(REPORT_SECTIONS.map((section) => section.id)),
-  );
+  const [includedSections, setIncludedSections] = useState<
+    Set<ReportSectionId>
+  >(() => new Set(REPORT_SECTIONS.map((section) => section.id)));
 
   function toggleSection(id: ReportSectionId) {
     setIncludedSections((prev) => {
@@ -65,7 +68,10 @@ const ReportPage = () => {
 
   const topRisks = [...risks]
     .filter((r) => r.status !== 'closed')
-    .sort((a, b) => riskScore(b.probability, b.impact) - riskScore(a.probability, a.impact))
+    .sort(
+      (a, b) =>
+        riskScore(b.probability, b.impact) - riskScore(a.probability, a.impact),
+    )
     .slice(0, 5);
 
   const upcomingMilestones = contractData.keyMilestones
@@ -73,34 +79,51 @@ const ReportPage = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-w-0 flex-1 overflow-y-auto bg-slate-100 p-6 print:bg-white print:p-0">
-      <div className="mx-auto max-w-4xl space-y-6 print:max-w-none">
-        <div className="no-print flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className='min-w-0 flex-1 overflow-y-auto bg-slate-100 p-6 print:bg-white print:p-0'>
+      <div className='mx-auto max-w-4xl space-y-6 print:max-w-none'>
+        <div className='no-print flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between'>
           <div>
-            <h1 className="text-xl font-semibold text-slate-900">Weekly Progress Report</h1>
-            <p className="text-sm text-slate-500">Preview below — use Print to save as PDF.</p>
+            <h1 className='text-xl font-semibold text-slate-900'>
+              Weekly Progress Report
+            </h1>
+            <p className='text-sm text-slate-500'>
+              Preview below — use Print to save as PDF.
+            </p>
           </div>
           <button
-            type="button"
+            type='button'
             onClick={() => window.print()}
-            className="cursor-pointer rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
+            className='cursor-pointer rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700'
           >
             Print / Save as PDF
           </button>
         </div>
 
-        <div className="no-print rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-            Sections to include
-          </p>
-          <div className="flex flex-wrap gap-x-4 gap-y-2">
+        <div className='no-print rounded-lg border border-slate-200 bg-white p-4 shadow-sm'>
+          <div className='mb-2 flex items-center justify-between gap-3'>
+            <p className='text-xs font-semibold uppercase tracking-wide text-slate-500'>
+              Which sections do you want to include in the print?
+            </p>
+            <button
+              type='button'
+              onClick={() => setIncludedSections(new Set(REPORT_SECTIONS.map((section) => section.id)))}
+              disabled={includedSections.size === REPORT_SECTIONS.length}
+              className='shrink-0 cursor-pointer text-xs font-medium text-blue-600 hover:text-blue-800 disabled:cursor-default disabled:text-slate-300 disabled:hover:text-slate-300'
+            >
+              Select all
+            </button>
+          </div>
+          <div className='flex flex-wrap gap-x-4 gap-y-2'>
             {REPORT_SECTIONS.map((section) => (
-              <label key={section.id} className="flex items-center gap-2 text-sm text-slate-700">
+              <label
+                key={section.id}
+                className='flex items-center gap-2 text-sm text-slate-700'
+              >
                 <input
-                  type="checkbox"
+                  type='checkbox'
                   checked={includedSections.has(section.id)}
                   onChange={() => toggleSection(section.id)}
-                  className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
+                  className='h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500'
                 />
                 {section.label}
               </label>
@@ -108,44 +131,51 @@ const ReportPage = () => {
           </div>
         </div>
 
-        <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm print:border-0 print:p-0 print:shadow-none">
-          <div className="mb-6 border-b border-slate-200 pb-4">
-            <h2 className="text-lg font-semibold text-slate-900">{contractData.projectName}</h2>
-            <p className="text-sm text-slate-500">
-              Weekly Progress Report &middot; week ending {formatDate(now.toISOString().slice(0, 10))}
+        <div className='rounded-lg border border-slate-200 bg-white p-6 shadow-sm print:border-0 print:p-0 print:shadow-none'>
+          <div className='mb-6 border-b border-slate-200 pb-4'>
+            <h2 className='text-lg font-semibold text-slate-900'>
+              {contractData.projectName}
+            </h2>
+            <p className='text-sm text-slate-500'>
+              Weekly Progress Report &middot; week ending{' '}
+              {formatDate(now.toISOString().slice(0, 10))}
             </p>
           </div>
 
           {includedSections.has('programme-summary') && (
-            <section className="mb-6">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <section className='mb-6'>
+              <h3 className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500'>
                 Programme summary
               </h3>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+              <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5'>
                 <StatTile
-                  label="Overall progress"
+                  label='Overall progress'
                   value={`${metrics.overallPercentComplete.toFixed(0)}%`}
                   sublabel={`${metrics.totalSections} sections tracked`}
                 />
                 <StatTile
-                  label="Critical path"
+                  label='Critical path'
                   value={`${metrics.criticalPathCount}`}
-                  sublabel="sections at 0 days free float"
+                  sublabel='sections at 0 days free float'
                   tone={metrics.criticalPathCount > 0 ? 'warning' : 'good'}
                 />
                 <StatTile
-                  label="Open blockers"
+                  label='Open blockers'
                   value={`${metrics.openBlockersCount}`}
-                  sublabel="sections & stations"
+                  sublabel='sections & stations'
                   tone={metrics.openBlockersCount > 0 ? 'warning' : 'good'}
                 />
                 <StatTile
-                  label="Stations energised"
+                  label='Stations energised'
                   value={`${metrics.stationsEnergised} / ${metrics.totalStations}`}
-                  sublabel="power stations"
+                  sublabel='power stations'
                 />
                 <StatTile
-                  label={metrics.daysToCompletion >= 0 ? 'Days to completion' : 'Days overdue'}
+                  label={
+                    metrics.daysToCompletion >= 0
+                      ? 'Days to completion'
+                      : 'Days overdue'
+                  }
                   value={`${Math.abs(metrics.daysToCompletion)}`}
                   sublabel={`Overall completion: ${formatDate(metrics.overallCompletionDate)}`}
                   tone={metrics.daysToCompletion < 0 ? 'warning' : 'default'}
@@ -155,72 +185,78 @@ const ReportPage = () => {
           )}
 
           {includedSections.has('status-breakdown') && (
-            <section className="mb-6">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <section className='mb-6'>
+              <h3 className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500'>
                 Status breakdown
               </h3>
-              <StatusBreakdownChart counts={metrics.statusCounts} total={metrics.totalSections} />
+              <StatusBreakdownChart
+                counts={metrics.statusCounts}
+                total={metrics.totalSections}
+              />
             </section>
           )}
 
           {includedSections.has('top-risks') && (
-            <section className="mb-6">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <section className='mb-6'>
+              <h3 className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500'>
                 Top risks
               </h3>
               {topRisks.length > 0 ? (
-                <ul className="space-y-1.5">
+                <ul className='space-y-1.5'>
                   {topRisks.map((risk) => (
                     <li
                       key={risk.riskId}
-                      className="flex items-center justify-between rounded border border-slate-200 px-3 py-1.5 text-sm"
+                      className='flex items-center justify-between rounded border border-slate-200 px-3 py-1.5 text-sm'
                     >
-                      <span className="text-slate-700">
-                        <span className="font-medium">{risk.riskId}</span> &middot; {risk.title}
+                      <span className='text-slate-700'>
+                        <span className='font-medium'>{risk.riskId}</span>{' '}
+                        &middot; {risk.title}
                       </span>
-                      <span className="text-xs text-slate-500">
-                        score {riskScore(risk.probability, risk.impact)}/9 &middot; {risk.status}
+                      <span className='text-xs text-slate-500'>
+                        score {riskScore(risk.probability, risk.impact)}/9
+                        &middot; {risk.status}
                       </span>
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-sm text-slate-400">No open risks.</p>
+                <p className='text-sm text-slate-400'>No open risks.</p>
               )}
             </section>
           )}
 
           {includedSections.has('open-blockers') && (
-            <section className="mb-6">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <section className='mb-6'>
+              <h3 className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500'>
                 Open blockers
               </h3>
               {blockedSections.length + blockedStations.length > 0 ? (
-                <ul className="space-y-1.5">
+                <ul className='space-y-1.5'>
                   {blockedSections.map((s) => (
-                    <li key={s.sectionId} className="text-sm text-slate-700">
-                      <span className="font-medium">{s.sectionId}</span> ({s.routeName}):{' '}
-                      {s.blockers.join('; ')}
+                    <li key={s.sectionId} className='text-sm text-slate-700'>
+                      <span className='font-medium'>{s.sectionId}</span> (
+                      {s.routeName}): {s.blockers.join('; ')}
                     </li>
                   ))}
                   {blockedStations.map((s) => (
-                    <li key={s.stationId} className="text-sm text-slate-700">
-                      <span className="font-medium">{s.name}</span>: {s.blockers.join('; ')}
+                    <li key={s.stationId} className='text-sm text-slate-700'>
+                      <span className='font-medium'>{s.name}</span>:{' '}
+                      {s.blockers.join('; ')}
                     </li>
                   ))}
                 </ul>
               ) : (
-                <p className="text-sm text-slate-400">No blockers reported.</p>
+                <p className='text-sm text-slate-400'>No blockers reported.</p>
               )}
             </section>
           )}
 
           {includedSections.has('resourcing') && (
-            <section className="mb-6">
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <section className='mb-6'>
+              <h3 className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500'>
                 Resourcing
               </h3>
-              <p className="text-sm text-slate-700">
+              <p className='text-sm text-slate-700'>
                 {conflictedCount > 0
                   ? `${conflictedCount} crew${conflictedCount === 1 ? '' : 's'} have overlapping demand across two or more sections — see the Resource Utilisation view for detail.`
                   : 'No overlapping crew demand detected this period.'}
@@ -230,14 +266,19 @@ const ReportPage = () => {
 
           {includedSections.has('upcoming-milestones') && (
             <section>
-              <h3 className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <h3 className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500'>
                 Upcoming milestones
               </h3>
-              <ul className="space-y-1.5">
+              <ul className='space-y-1.5'>
                 {upcomingMilestones.map((m) => (
-                  <li key={m.name} className="flex items-center justify-between text-sm">
-                    <span className="text-slate-700">{m.name}</span>
-                    <span className="tabular-nums text-slate-500">{formatDate(m.date)}</span>
+                  <li
+                    key={m.name}
+                    className='flex items-center justify-between text-sm'
+                  >
+                    <span className='text-slate-700'>{m.name}</span>
+                    <span className='tabular-nums text-slate-500'>
+                      {formatDate(m.date)}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -245,8 +286,9 @@ const ReportPage = () => {
           )}
 
           {includedSections.size === 0 && (
-            <p className="text-sm text-slate-400">
-              No sections selected — tick at least one above to preview the report.
+            <p className='text-sm text-slate-400'>
+              No sections selected — tick at least one above to preview the
+              report.
             </p>
           )}
         </div>
